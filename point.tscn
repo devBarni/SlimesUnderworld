@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://ca1b88apawqcp"]
+
+[ext_resource type="Texture2D" uid="uid://c7rhk25fp6cmm" path="res://assets/player/pointscoins0.png" id="1_wb78x"]
+[ext_resource type="Texture2D" uid="uid://d26bw308dnxke" path="res://assets/player/pointscoins1.png" id="2_yhe51"]
+[ext_resource type="Texture2D" uid="uid://bvl0aikc8xwgx" path="res://assets/player/pointscoins2.png" id="3_f5rqn"]
+[ext_resource type="Texture2D" uid="uid://cp8532bnayfms" path="res://assets/player/pointscoins3.png" id="4_wtvaq"]
+[ext_resource type="Texture2D" uid="uid://b3jvn4q6qwyl2" path="res://assets/player/pointscoins4.png" id="5_00u4h"]
+[ext_resource type="Texture2D" uid="uid://dg2h5rg1utvi0" path="res://assets/player/pointscoins5.png" id="6_f3t6f"]
+[ext_resource type="Texture2D" uid="uid://ft5ggoyhap7x" path="res://assets/player/pointscoins6.png" id="7_osw7e"]
+[ext_resource type="Script" path="res://point.gd" id="8_oxesc"]
+[ext_resource type="AudioStream" uid="uid://rm1qhvqajjro" path="res://assets/player/coinsound.wav" id="9_wrvjt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cm6nq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wb78x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yhe51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f5rqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wtvaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_00u4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f3t6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_osw7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egl5v"]
+radius = 5.09902
+
+[node name="Point" type="Area2D"]
+script = ExtResource("8_oxesc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cm6nq")
+autoplay = "default"
+frame_progress = 0.578857
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_egl5v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wrvjt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

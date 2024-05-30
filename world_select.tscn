@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0wlwdyfx4r20"]
+
+[ext_resource type="Script" path="res://world_select.gd" id="1_ykxgd"]
+[ext_resource type="Texture2D" uid="uid://h34lbvv24e56" path="res://assets/stairsiconmap.png" id="2_5b3m2"]
+[ext_resource type="Texture2D" uid="uid://bvxgogefjgd2f" path="res://assets/slimeicon.png" id="2_dt53r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lfdve"]
+
+[node name="WorldSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykxgd")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectCanvas" type="TextureRect" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1728.0
+offset_bottom = 992.0
+texture = SubResource("CanvasTexture_lfdve")
+
+[node name="HeroIcon" type="TextureRect" parent="Control"]
+top_level = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 80.0
+texture = ExtResource("2_dt53r")
+
+[node name="Map1" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+icon = ExtResource("2_5b3m2")
+flat = true
+
+[node name="Map2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 264.0
+offset_right = 160.0
+offset_bottom = 336.0
+icon = ExtResource("2_5b3m2")
+flat = true
+
+[node name="Map3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 48.0
+offset_right = 408.0
+offset_bottom = 120.0
+icon = ExtResource("2_5b3m2")
+flat = true

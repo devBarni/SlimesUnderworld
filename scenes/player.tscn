@@ -1,0 +1,173 @@
+[gd_scene load_steps=22 format=3 uid="uid://cratkbo0cyj2l"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_uxxwt"]
+[ext_resource type="Texture2D" uid="uid://bxshm4cppo01r" path="res://assets/player/dieherotileset.png" id="2_i7g10"]
+[ext_resource type="Texture2D" uid="uid://cw3scww2tp2yv" path="res://assets/player/nherotileset.png" id="2_nc7e8"]
+[ext_resource type="AudioStream" uid="uid://pwt4k5sd56u5" path="res://assets/player/jumpsound.wav" id="3_c4v0t"]
+[ext_resource type="FontFile" uid="uid://d35nqik1gjrni" path="res://QuinqueFive_Font/QuinqueFive.otf" id="5_qyabo"]
+[ext_resource type="FontFile" uid="uid://467u6dx0q1td" path="res://QuinqueFive_Font/QuinqueFive.woff" id="6_aljer"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb2qk"]
+atlas = ExtResource("2_i7g10")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65hre"]
+atlas = ExtResource("2_i7g10")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff2jp"]
+atlas = ExtResource("2_i7g10")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ruy"]
+atlas = ExtResource("2_i7g10")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftf35"]
+atlas = ExtResource("2_i7g10")
+region = Rect2(48, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmmee"]
+atlas = ExtResource("2_nc7e8")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttfii"]
+atlas = ExtResource("2_nc7e8")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdwci"]
+atlas = ExtResource("2_nc7e8")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1mkl"]
+atlas = ExtResource("2_nc7e8")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wqso"]
+atlas = ExtResource("2_nc7e8")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysuly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb2qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff2jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ruy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftf35")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmmee")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttfii")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdwci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1mkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wqso")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8t5p"]
+size = Vector2(8, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lewdh"]
+size = Vector2(8, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_huera"]
+font = ExtResource("6_aljer")
+font_size = 5
+font_color = Color(0.866667, 0, 0.235294, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv2wv"]
+size = Vector2(10, 6)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(0, -6)
+script = ExtResource("1_uxxwt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ysuly")
+animation = &"die"
+autoplay = "run"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -6)
+stream = ExtResource("3_c4v0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_j8t5p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(2, -2)
+zoom = Vector2(6, 6)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.5
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 4.5
+drag_vertical_enabled = true
+drag_vertical_offset = -0.55
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lewdh")
+
+[node name="DeadText" type="Label" parent="."]
+visible = false
+offset_left = -41.0
+offset_top = -41.0
+offset_right = 43.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("5_qyabo")
+text = "You're dead
+Restart = R"
+label_settings = SubResource("LabelSettings_huera")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playerhitbox" type="Area2D" parent="."]
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerhitbox"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_kv2wv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="playerhitbox" to="." method="_on_playerhitbox_body_entered"]

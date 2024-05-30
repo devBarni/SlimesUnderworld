@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://gubi4iwrlj8e"]
+
+[ext_resource type="Script" path="res://Ghastz.gd" id="1_1tcva"]
+[ext_resource type="Texture2D" uid="uid://b2owd00n1t0s5" path="res://assets/enemy/ghostenemytileset.png" id="2_j78am"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8fxl"]
+atlas = ExtResource("2_j78am")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cov7n"]
+atlas = ExtResource("2_j78am")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7rex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8fxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cov7n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vibg"]
+size = Vector2(8, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqmau"]
+size = Vector2(8, 8)
+
+[node name="Ghastz" type="CharacterBody2D"]
+position = Vector2(0, -6)
+collision_mask = 524289
+script = ExtResource("1_1tcva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f7rex")
+autoplay = "default"
+frame_progress = 0.713593
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_8vibg")
+
+[node name="enemyhitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyhitbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_dqmau")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-5, -3)
+target_position = Vector2(0, 15)
+
+[connection signal="body_entered" from="enemyhitbox" to="." method="_on_enemyhitbox_body_entered"]
