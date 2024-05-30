@@ -1296,12 +1296,4 @@ position = Vector2(-359, -113)
 position = Vector2(-209, -143)
 shape = SubResource("RectangleShape2D_a54lt")
 
-[connection signal="body_entered" from="TileMap/Point" to="TileMap/Point" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18821" to="TileMap/@Area2D@18821" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18822" to="TileMap/@Area2D@18822" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18823" to="TileMap/@Area2D@18823" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18824" to="TileMap/@Area2D@18824" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18825" to="TileMap/@Area2D@18825" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18826" to="TileMap/@Area2D@18826" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@18827" to="TileMap/@Area2D@18827" method="_on_body_entered"]
 [connection signal="body_entered" from="transition" to="TileMap/player" method="_on_transition_body_entered"]
