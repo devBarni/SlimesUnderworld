@@ -1,10 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://vbgry8iqqoyc"]
 
 [ext_resource type="Script" path="res://mainmenu.gd" id="1_7032w"]
-[ext_resource type="Texture2D" uid="uid://cw6ns4hnu4xg0" path="res://assets/menubackground.png" id="2_lwx5f"]
+[ext_resource type="Texture2D" uid="uid://b061h61nftpfq" path="res://assets/lastmainmenu.png" id="2_1ij3q"]
 
 [node name="mainmenu" type="CanvasLayer"]
 script = ExtResource("1_7032w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ij3q")
 
 [node name="start" type="Button" parent="."]
 top_level = true
@@ -15,14 +23,15 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -88.0
 offset_top = -76.0
-offset_right = 88.0
-offset_bottom = -2.0
+offset_right = 40.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start Game"
 
-[node name="exit" type="Button" parent="."]
+[node name="exit" type="Button" parent="start"]
 top_level = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,20 +39,11 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -88.0
 offset_top = 2.0
-offset_right = 88.0
-offset_bottom = 73.0
+offset_right = 40.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit"
 
-[node name="Menubackground" type="Sprite2D" parent="."]
-show_behind_parent = true
-light_mask = 2
-visibility_layer = 2
-z_index = -1
-position = Vector2(837, 443.5)
-scale = Vector2(6.4375, 6.14583)
-texture = ExtResource("2_lwx5f")
-
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="start/exit" to="." method="_on_exit_pressed"]
