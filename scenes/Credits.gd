@@ -11,11 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/World1.tscn")
-
-func _on_exit_pressed():
-	get_tree().quit()
-
-func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://scenes/Credits.tscn")
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://mainmenu.tscn")

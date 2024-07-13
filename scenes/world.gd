@@ -5,6 +5,9 @@ var minutes: int = 0
 var seconds: int = 0
 var msec: int = 0
 
+func _enter_tree():
+	Global.root = self
+
 func _process(delta) -> void:
 	time += delta
 	msec = fmod(time, 1) * 100

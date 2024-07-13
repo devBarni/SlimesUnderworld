@@ -1,0 +1,237 @@
+[gd_scene load_steps=17 format=3 uid="uid://b72pwdts2qngs"]
+
+[ext_resource type="Script" path="res://scenes/World2.gd" id="1_1hwtf"]
+[ext_resource type="PackedScene" uid="uid://ca1b88apawqcp" path="res://point.tscn" id="2_8uh27"]
+[ext_resource type="Texture2D" uid="uid://c3e3gvb5ginsl" path="res://assets/tileset/barnitileset.png" id="3_hijl2"]
+[ext_resource type="Texture2D" uid="uid://ct5nikrp4w2an" path="res://assets/tileset/spikes.png" id="4_ncluw"]
+[ext_resource type="Texture2D" uid="uid://cjvvsepnlfcwj" path="res://assets/tileset/stairsdown-pixilart.png" id="5_86o27"]
+[ext_resource type="PackedScene" uid="uid://cratkbo0cyj2l" path="res://scenes/player.tscn" id="6_kxdkc"]
+[ext_resource type="Texture2D" uid="uid://c7rhk25fp6cmm" path="res://assets/player/pointscoins0.png" id="7_dk16f"]
+[ext_resource type="FontFile" uid="uid://d35nqik1gjrni" path="res://QuinqueFive_Font/QuinqueFive.otf" id="8_hlwqx"]
+[ext_resource type="PackedScene" uid="uid://gubi4iwrlj8e" path="res://ghastz.tscn" id="9_vnpfu"]
+[ext_resource type="AudioStream" uid="uid://ditqnwsc6ce6y" path="res://melody-meadow_2.ogg" id="10_ojtup"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1hseu"]
+scenes/1/scene = ExtResource("2_8uh27")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_it2ke"]
+texture = ExtResource("3_hijl2")
+texture_region_size = Vector2i(12, 12)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, 6, 6, -6, 6, -6, 6)
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_1/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+4:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_1/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+0:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_1/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 4.41942, -6, 6, -6, 6, 6, -6, 6)
+1:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_1/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+2:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_1/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_1/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+0:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_1/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+1:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_1/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+2:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_1/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75, -4.125, 4.875, -4.125, 5.875, -2.625, 2.625, 1, -2.625, 1.125, -5.875, -1.375)
+4:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_1/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ul2o"]
+texture = ExtResource("4_ncluw")
+texture_region_size = Vector2i(12, 12)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.8007, 6, -0.618718, -1.85616, 2.56326, 6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o031"]
+texture = ExtResource("5_86o27")
+texture_region_size = Vector2i(12, 12)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_448sp"]
+tile_size = Vector2i(12, 12)
+physics_layer_0/collision_layer = 3
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 256
+sources/1 = SubResource("TileSetAtlasSource_it2ke")
+sources/0 = SubResource("TileSetScenesCollectionSource_1hseu")
+sources/3 = SubResource("TileSetAtlasSource_5ul2o")
+sources/4 = SubResource("TileSetAtlasSource_4o031")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isv26"]
+size = Vector2(14.325, 14.1543)
+
+[node name="World1" type="Node2D"]
+script = ExtResource("1_1hwtf")
+
+[node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 512
+tile_set = SubResource("TileSet_448sp")
+rendering_quadrant_size = 12
+format = 2
+layer_0/tile_data = PackedInt32Array(1, 65537, 0, 2, 65537, 0, 3, 65537, 0, 0, 65537, 0, 4, 65537, 0, -1, 131073, 0, -65531, 1, 0, -65538, 131073, 0, -131066, 1, 0, -196601, 1, 0, -131075, 131073, 0, -196612, 262145, 0, -262148, 262145, 0, -327684, 262145, 0, -393220, 262145, 0, -458756, 262145, 0, -524292, 262145, 0, -589828, 262145, 0, -327672, 262145, 0, -393208, 262145, 0, -458744, 262145, 0, -524280, 262145, 0, -589816, 262145, 0, -655352, 262145, 0, -131077, 1, 0, -131076, 65537, 0, -65542, 1, 0, -7, 1, 0, -196600, 65537, 0, -196599, 131073, 0, -262136, 262145, 0, -131062, 131073, 0, -65525, 131073, 0, 12, 65537, 0, 13, 65537, 0, 14, 65537, 0, 15, 65537, 0, 16, 65537, 0, 17, 65537, 0, 65528, 65537, 0, 65527, 65537, 0, 65526, 65537, 0, 65525, 65537, 0, -327681, 262145, 1, -393216, 262145, 1, -393215, 262145, 1, -589820, 262145, 1, -589819, 262145, 1, -589818, 262145, 1, -720897, 262145, 1, -786432, 262145, 1, -655364, 262145, 0, -720900, 262145, 0, -786436, 262145, 0, -720888, 262145, 0, -786424, 262145, 0, -851960, 262145, 0, -8, 0, 65536, -65524, 0, 65536, -458751, 3, 0, -655355, 3, 0, -65537, 3, 0, -65532, 3, 0, -196602, 3, 0, -786433, 3, 0, 65524, 65537, 0, 65523, 65537, 0, -14, 131073, 0, -65518, 1, 0, -15, 65537, 0, -16, 65537, 0, -17, 65537, 0, -18, 65537, 0, -19, 65537, 0, -20, 65537, 0, -65557, 131073, 0, -65517, 65537, 0, -65516, 65537, 0, -65515, 65537, 0, -65514, 65537, 0, -65513, 65537, 0, -65512, 65537, 0, -131047, 1, 0, -458748, 0, 65536, -65543, 3, 0, -65551, 3, 0, -65523, 3, 0, -851972, 3, 0, -917496, 3, 0, -9, 3, 0, -65555, 0, 65536, -65558, 65537, 0, -65559, 65537, 0, -65560, 65537, 0, -131097, 131073, 0, -196634, 131073, 1, -262170, 131073, 1, -327706, 131073, 1, -393242, 131073, 1, -458778, 131073, 1, -524314, 131073, 1, -393239, 262145, 0, -393238, 262145, 0, -393237, 262145, 0, -393235, 262145, 0, -393236, 262145, 0, -458771, 262145, 0, -524307, 262145, 0, -589843, 262145, 0, -655379, 262145, 0, -655380, 262145, 0, -655381, 262145, 0, -655382, 262145, 0, -655383, 262145, 0, -655384, 262145, 0, -589849, 131073, 2, -458772, 4, 0, -458773, 3, 0, -196582, 1, 0, -262117, 1, 1, -327653, 1, 1, -393189, 1, 1, -458725, 1, 1, -589797, 1, 1, -524261, 1, 1, -655334, 1, 2, -720871, 262145, 0, -720872, 262145, 0, -720873, 262145, 0, -720874, 262145, 0, -720875, 262145, 0, -720876, 262145, 0, -655340, 262145, 0, -589804, 262145, 0, -524268, 262145, 0, -458732, 262145, 0, -458731, 262145, 0, -458730, 262145, 0, -458729, 262145, 0, -458728, 262145, 0, -524266, 3, 0, -524267, 4, 0, -851963, 262145, 1, -851962, 262145, 1, -655385, 131073, 1, -720921, 131073, 1, -786457, 131073, 1, -851993, 131073, 1, -917529, 131073, 1, -983065, 131073, 1, -1048601, 131073, 1, -1114137, 131073, 1, -1179673, 131073, 1, -1245209, 131073, 1, -1310745, 131073, 1, -1376281, 131073, 1, -1441817, 131073, 1, -1507353, 131073, 1, -1572889, 131073, 1, -1638424, 65537, 2, -1638423, 65537, 2, -1638422, 65537, 2, -1638421, 65537, 2, -1638420, 65537, 2, -1638419, 65537, 2, -1638418, 65537, 2, -1638417, 65537, 2, -1638416, 65537, 2, -1638415, 65537, 2, -1638414, 65537, 2, -1638413, 65537, 2, -1638412, 65537, 2, -1638411, 65537, 2, -1638410, 65537, 2, -1638409, 65537, 2, -1638408, 65537, 2, -1638407, 65537, 2, -1638406, 65537, 2, -1638405, 65537, 2, -1638404, 65537, 2, -1638403, 65537, 2, -1638402, 65537, 2, -1638401, 65537, 2, -1703936, 65537, 2, -1703935, 65537, 2, -1703934, 65537, 2, -1703933, 65537, 2, -1703932, 65537, 2, -1703931, 65537, 2, -1703930, 65537, 2, -1703929, 65537, 2, -1703928, 65537, 2, -1703927, 65537, 2, -1703926, 65537, 2, -1703925, 65537, 2, -1703924, 65537, 2, -1703923, 65537, 2, -1703922, 65537, 2, -1703921, 65537, 2, -1703920, 65537, 2, -1703919, 65537, 2, -1703918, 65537, 2, -1703917, 65537, 2, -1703916, 65537, 2, -1703915, 65537, 2, -1703914, 65537, 2, -1703913, 65537, 2, -1703912, 65537, 2, -1703911, 65537, 2, -720870, 1, 1, -786406, 1, 1, -851942, 1, 1, -917478, 1, 1, -983014, 1, 1, -1048550, 1, 1, -1114086, 1, 1, -1179622, 1, 1, -1245158, 1, 1, -1310694, 1, 1, -1376230, 1, 1, -1441766, 1, 1, -1507302, 1, 1, -1572838, 1, 1, -1638374, 1, 1, -131061, 3, 0, -1572876, 196609, 0, -1507340, 196609, 0, -1441804, 196609, 0, -1376268, 196609, 0, -1310732, 196609, 0, -1245196, 196609, 0, -1179660, 196609, 0, -1114124, 196609, 1, -1048588, 196609, 2, -327699, 196609, 0, -262163, 196609, 2, -1310695, 262145, 0, -1310696, 262145, 0, -1310697, 262145, 0, -1310698, 262145, 0, -1310699, 262145, 0, -1310700, 262145, 0, -1245208, 262145, 0, -1245207, 262145, 0, -1245206, 262145, 0, -1245205, 262145, 0, -1245204, 262145, 0, -1245203, 262145, 0, -1572871, 262145, 0, -1507335, 262145, 0, -1441799, 262145, 0, -1376263, 262145, 0, -1310727, 262145, 0, -1310726, 262145, 0, -1310725, 262145, 0, -1310722, 262145, 0, -1310721, 262145, 0, -1376256, 262145, 0, -1376255, 262145, 0, -1376254, 262145, 0, -1310724, 262145, 0, -1310723, 262145, 0, -1376253, 262145, 0, -1376252, 262145, 0, -1376251, 262145, 0, -1376250, 262145, 0, -1376249, 262145, 0, -1376248, 262145, 0, -1376247, 262145, 0, -1376246, 262145, 0, -1376245, 262145, 0, -1441781, 262145, 0, -1507317, 262145, 0, -1572853, 262145, 0, -1638389, 262145, 0, -1310709, 196609, 0, -1245173, 196609, 1, -1179637, 196609, 2, -1245186, 196609, 0, -1179650, 196609, 2)
+
+[node name="player" parent="TileMap" instance=ExtResource("6_kxdkc")]
+position = Vector2(32, -8)
+scale = Vector2(1.11111, 1.11111)
+
+[node name="UIManager" type="CanvasLayer" parent="TileMap/player"]
+
+[node name="TextureRect" type="TextureRect" parent="TileMap/player/UIManager"]
+show_behind_parent = true
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("7_dk16f")
+
+[node name="Displaycoins" type="Label" parent="TileMap/player/UIManager"]
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 129.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="Control" type="Control" parent="TileMap/player/UIManager"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Minutes" type="Label" parent="TileMap/player/UIManager/Control"]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 11.0
+offset_right = 1477.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_hlwqx")
+theme_override_font_sizes/font_size = 23
+text = "00."
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="TileMap/player/UIManager/Control"]
+layout_mode = 0
+offset_left = 1477.0
+offset_top = 11.0
+offset_right = 1561.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_hlwqx")
+theme_override_font_sizes/font_size = 23
+text = "00."
+horizontal_alignment = 2
+
+[node name="Msecs" type="Label" parent="TileMap/player/UIManager/Control"]
+layout_mode = 0
+offset_left = 1555.0
+offset_top = 11.0
+offset_right = 1644.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_hlwqx")
+theme_override_font_sizes/font_size = 23
+text = "000"
+horizontal_alignment = 2
+
+[node name="transition" type="Area2D" parent="TileMap"]
+position = Vector2(256, -88)
+
+[node name="transitionaction" type="CollisionShape2D" parent="TileMap/transition"]
+shape = SubResource("RectangleShape2D_isv26")
+
+[node name="transition2" type="Area2D" parent="TileMap"]
+position = Vector2(-232, -88)
+
+[node name="transitionaction" type="CollisionShape2D" parent="TileMap/transition2"]
+shape = SubResource("RectangleShape2D_isv26")
+
+[node name="Point" parent="." instance=ExtResource("2_8uh27")]
+position = Vector2(-8, -166)
+
+[node name="Ghastz" parent="." instance=ExtResource("9_vnpfu")]
+position = Vector2(-200, -22)
+
+[node name="Ghastz2" parent="." instance=ExtResource("9_vnpfu")]
+position = Vector2(256, -22)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ojtup")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="body_entered" from="TileMap/transition" to="TileMap/player" method="_on_transition_body_entered"]
+[connection signal="body_entered" from="TileMap/transition2" to="TileMap/player" method="_on_transition_body_entered"]
+[connection signal="body_entered" from="TileMap/Point" to="TileMap/Point" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19009" to="TileMap/@Area2D@19009" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19010" to="TileMap/@Area2D@19010" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@19011" to="TileMap/@Area2D@19011" method="_on_body_entered"]

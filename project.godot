@@ -22,7 +22,8 @@ World="*res://World.gd"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
+window/size/initial_screen=195
 window/stretch/aspect="keep_width"
 
 [editor]

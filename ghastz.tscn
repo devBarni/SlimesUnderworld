@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gubi4iwrlj8e"]
+[gd_scene load_steps=7 format=3 uid="uid://gubi4iwrlj8e"]
 
 [ext_resource type="Script" path="res://Ghastz.gd" id="1_1tcva"]
 [ext_resource type="Texture2D" uid="uid://b2owd00n1t0s5" path="res://assets/enemy/ghostenemytileset.png" id="2_j78am"]
@@ -28,9 +28,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vibg"]
 size = Vector2(8, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqmau"]
-size = Vector2(8, 8)
-
 [node name="Ghastz" type="CharacterBody2D"]
 position = Vector2(0, -6)
 collision_mask = 524289
@@ -45,14 +42,6 @@ frame_progress = 0.713593
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_8vibg")
 
-[node name="enemyhitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyhitbox"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_dqmau")
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-5, -3)
 target_position = Vector2(0, 15)
-
-[connection signal="body_entered" from="enemyhitbox" to="." method="_on_enemyhitbox_body_entered"]

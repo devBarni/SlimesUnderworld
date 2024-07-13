@@ -38,6 +38,9 @@ func _physics_process(delta):
 			velocity.y = firstJUMP_VELOCITY
 			$AnimatedSprite2D/AudioStreamPlayer2D.play()
 
+		if Input.is_action_just_released("up") && velocity.y < 0:
+			velocity.y = JUMP_VELOCITY/5
+
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("left", "right")
@@ -57,7 +60,17 @@ func _physics_process(delta):
 			sprite.flip_h = true
 		elif direction > 0:
 			sprite.flip_h = false
-			
+		
+		var collision = get_last_slide_collision()
+		if collision:
+			var collider = collision.get_collider()
+			if is_instance_valid(collider):
+				if collider.is_in_group("enemy"): 
+					if collision.get_normal() == Vector2(0,-1):
+						collider.call_deferred("queue_free")
+						self.velocity.y = -100
+					elif collision.get_normal() == Vector2(-1,0) || collision.get_normal() == Vector2(1,0):
+						_on_area_2d_body_entered(collider)
 		move_and_slide()
 	else:
 		
@@ -66,11 +79,14 @@ func _physics_process(delta):
 
 # Śmierć bohatera (po wejściu na kolce) oraz schowanie go, wyświetlenie
 # ekranu restartu
+var soundEffect = preload("res://assets/player/hitHurt.wav")
+
 func _on_area_2d_body_entered(body):
 	alive = false
 	sprite.visible = false
 	dead_text.visible = true
 	Global.startingPoints = 0
+	Global.spawnSoundEffect("Master", soundEffect, self.global_position, true, 6)
 
 # Aktualizacja interfejsu z punktami 
 @onready var point_count = $UIManager/Displaycoins
@@ -89,4 +105,5 @@ func _on_playerhitbox_body_entered(body):
 
 func _on_transition_body_entered(body):
 	if body.is_in_group("player"):
-		get_tree().change_scene_to_file("res://world_select.tscn")
+		Global.currentlevel += 1
+		get_tree().change_scene_to_file("res://scenes/World"+str(Global.currentlevel)+".tscn")
